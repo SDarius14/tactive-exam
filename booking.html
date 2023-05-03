@@ -74,7 +74,7 @@
                                                  <div class="form-group" >
                                                      <label class="text-white" >Date</label>
                                                      <div class="input-group date" data-provide="datepicker">
-                                                        <input type="text" class="form-control" id="date"/>
+                                                        <input type="text" class="form-control" id="date" placeholder="Choose date"/>
                                                         <span class="input-group-append">
                                                           <span class="input-group-text bg-light d-block">
                                                             <i class="fa fa-calendar text-primary"></i>
@@ -102,14 +102,45 @@
 
                                              
                                          </div>
+                                         <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group" >
+                                                    <label class="text-white" >Flight Duration</label>
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control" placeholder="Type duration" >
+                                                   </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                               <div class="form-group" >
+                                                   <label class="text-white">Age</label>
+                                                   <div class="input-group">
+                                                    <input type="age" class="form-control" placeholder="Type your age" >
+                                               </div>
+                                               
+                                               </div>
+                                           </div>
+
+                                            
+                                        </div>
 
 
                                          
                                      </div>  
                                    </div>
-                                   <div > 
-                                    <button class="btn btn-primary px-5" id="add-flight-btn" > + add another flight </button>
-                                </div>
+                                   <div class="container" id="add-flight-btn-container">
+                                        <div class="row justify-content-end" >
+                                            <div class="col-6 text-center mt-3" > 
+                                                <button class="btn btn-primary px-5" id="add-flight-btn" > + add another flight </button>
+                                            </div>
+                                            <div class="col-3 text-center mt-4">
+                                                <a href="" class="text-primary" >Next <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                                                  </svg></a>
+
+                                            </div>
+                                        </div>
+                                   </div>                                
                                </div>
 
                            </form>
@@ -123,8 +154,10 @@
                        </div>
 
                    </div>
-                   <div class="col-4 text-left">
+                   <div class="col-4 text-left text-primary justify-content-start">
                         <h1>Find a Flight</h1>
+                        <p>30min Flight = $120  60min Flight =$195</p>
+                        <p>Maximum 1 person per flight</p>
                    </div>
                </div>
            </div>
@@ -211,6 +244,7 @@
     
     <script>
         // Get the "add-flight-btn" button element and "content-flight" container element
+        const addFlightBtnContainer = document.getElementById('add-flight-btn-container');
         const addFlightBtn = document.getElementById('add-flight-btn');
         const contentFlight = document.getElementById('content-flight');
       
@@ -231,10 +265,10 @@
           });
       
           // Append the cloned content flight to the parent element
-          addFlightBtn.parentNode.insertBefore(newContentFlight, addFlightBtn);
+          addFlightBtnContainer.parentNode.insertBefore(newContentFlight, addFlightBtnContainer);
 
           // Insert the remove button before the new content flight
-          addFlightBtn.parentNode.insertBefore(removeBtn, newContentFlight);
+          addFlightBtnContainer.parentNode.insertBefore(removeBtn, newContentFlight);
         });
       </script>
 
